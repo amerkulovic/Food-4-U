@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import { useContext } from "react";
 
 import CartContext from "../../store/cart-context";
 import CartIcon from "../Cart/CartIcon";
@@ -6,6 +6,7 @@ import classes from "./CartButton.module.css";
 
 const CartButton = (props) => {
   const ctx = useContext(CartContext);
+  console.log(ctx.items);
 
   const numberOfCartItems = ctx.items.reduce((currNumber, item) => {
     return currNumber + item.amount;
